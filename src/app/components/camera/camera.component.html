@@ -1,0 +1,33 @@
+<div class="container-fluid p-5 d-flex flex-column align-items-center h-100 frb-camera" [ngClass]="{'frb-camera-active': isTakingPhoto, 'frb-camera-done': state == CameraComponentState.Complete}">
+  <h1 class="text-center display-2" translate="pages.camera.title"></h1>
+  <p translate="pages.camera.wait" *ngIf="isTakingPhoto; else idleDescription"></p>
+  <ng-template #idleDescription><p translate="pages.camera.description"></p></ng-template>
+  <div class="flex-grow-1 position-relative mb-5">
+    <video #videoElement class="h-100"></video>
+    <div *ngIf="isTakingPhoto" class="frb-camera-overlay d-flex justify-content-center align-items-center" [ngSwitch]="state" [style.height]="video.clientHeight + 'px'">
+      <p *ngSwitchCase="CameraComponentState.Countdown3" class="frb-countdown" translate="pages.camera.countdown.3"></p>
+      <p *ngSwitchCase="CameraComponentState.Countdown2" class="frb-countdown" translate="pages.camera.countdown.2"></p>
+      <p *ngSwitchCase="CameraComponentState.Countdown1" class="frb-countdown" translate="pages.camera.countdown.1"></p>
+      <div class="w-100 h-100 d-flex justify-content-center align-items-center frb-turn-around" *ngSwitchCase="CameraComponentState.TakingPhotos">
+        <round-progress [current]="current" [max]="photoDuration - 1000" [duration]="photoDuration - 1000" background="rgba(0, 0, 0, 0)" color="white" class="frb-spinner" animation="linearEase" [responsive]="true"></round-progress>
+        <p translate="pages.camera.turnaround" [style.animation-duration]="(photoDuration / 1000) + 's'"></p>
+      </div>
+      <p *ngSwitchCase="CameraComponentState.Complete" class="frb-countdown"><fa-icon [icon]="['fas', 'check']"></fa-icon></p>
+    </div>
+  </div>
+  <div *ngIf="isTakingPhoto; else idleButtons">
+    <button class="btn btn-light btn-lg" (click)="cancel()" [disabled]="state == CameraComponentState.Complete">
+      <fa-icon [icon]="['fas', 'times']"></fa-icon> <span translate="pages.camera.buttons.cancel" class="ml-2"></span>
+    </button>
+  </div>
+  <ng-template #idleButtons>
+    <div>
+      <a class="btn btn-secondary btn-lg mr-2" routerLink="/">
+        <fa-icon [icon]="['fas', 'arrow-left']"></fa-icon> <span translate="pages.camera.buttons.back" class="ml-2"></span>
+      </a>
+      <button class="btn btn-primary btn-lg" (click)="takePhoto()">
+        <span translate="pages.camera.buttons.continue" class="mr-2"></span> <fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+      </button>
+    </div>
+  </ng-template>
+</div>

@@ -1,0 +1,15 @@
+<div class="container p-5 d-flex flex-column align-items-center">
+  <h1 class="text-center display-2" translate="pages.preview.title"></h1>
+  <p translate="pages.preview.description"></p>
+  <div class="mb-5 row align-items-start">
+    <img *ngFor="let image of images" [src]="image" class="d-block col-4 p-1 h-auto" />
+  </div>
+  <div>
+    <a class="btn btn-danger btn-lg mr-2" routerLink="/camera">
+      <fa-icon [icon]="['fas', 'sync-alt']"></fa-icon> <span translate="pages.preview.buttons.retake" class="ml-2"></span>
+    </a>
+    <a class="btn btn-primary btn-lg" routerLink="/">
+      <span translate="pages.preview.buttons.next" class="mr-2"></span> <fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+    </a>
+  </div>
+</div>

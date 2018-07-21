@@ -1,0 +1,32 @@
+{
+  "pages": {
+      "home": {
+          "title": "Welcome",
+          "cta": "Get Started"
+      },
+      "camera": {
+        "title": "Smile",
+        "description": "Ensure your entire body is in the frame, then tap Continue",
+        "wait": "Once the countdown ends, turn your body slowly",
+        "buttons": {
+          "back": "Back",
+          "cancel": "Cancel",
+          "continue": "Continue"
+        },
+        "countdown": {
+          "3": "3",
+          "2": "2",
+          "1": "1"
+        },
+        "turnaround": "Turn around slowly"
+      },
+      "preview": {
+        "title": "Your Photos",
+        "description": "We took these photos of you. Make sure they contain your body from multiple angles, then tap Next.",
+        "buttons": {
+          "retake": "Retake",
+          "next": "Next"
+        }
+      }
+  }
+}

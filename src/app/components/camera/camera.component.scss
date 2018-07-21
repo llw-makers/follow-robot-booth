@@ -1,0 +1,85 @@
+.frb-camera {
+  transition: background-color 0.2s, color 0.2s;
+  &.frb-camera-active {
+    background-color: black;
+    color: white;
+
+    &.frb-camera-done {
+      background-color: #28a475;
+    }
+
+    video {
+      clip-path: circle(37%);
+      filter: brightness(0.5);
+    }
+  }
+
+  video {
+    display: block;
+    transition: filter 0.2s;
+    clip-path: inset(0 0);
+  }
+
+  .frb-camera-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .frb-countdown {
+    font-size: 15em;
+    position: relative;
+    animation-name: countdown;
+    animation-duration: 1s;
+  }
+
+  .frb-turn-around {
+    p {
+      font-size: 2.5em;
+      animation-name: turnaroundp;
+      position: relative;
+    }
+  }
+
+  .frb-spinner {
+    position: absolute;
+    width: 70%;
+    height: 100%;
+  }
+}
+
+@keyframes countdown {
+  0% {
+    opacity: 0;
+    top: 100px;
+  }
+
+  30% {
+    opacity: 1;
+    top: 0px;
+  }
+
+  90% {
+    opacity: 1;
+    top: 0px;
+  }
+
+  100% {
+    opacity: 0;
+    top: -30px;
+  }
+}
+
+@keyframes turnaroundp {
+  0% {
+    opacity: 0;
+    top: 100px;
+  }
+
+  6% {
+    opacity: 1;
+    top: 0px;
+  }
+}
