@@ -27,6 +27,13 @@
           "retake": "Retake",
           "next": "Next"
         }
+      },
+      "cardreader": {
+        "title": "Scan a card",
+        "description": "Scan a card to link your photos to that card. Alternatively, you can use your phone.",
+        "buttons": {
+          "back": "Back"
+        }
       }
   }
 }

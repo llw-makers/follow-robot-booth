@@ -3,6 +3,7 @@ import { CameraComponent } from './components/camera/camera.component';
 import { PreviewComponent } from './components/preview/preview.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CardReaderComponent } from './components/card-reader/card-reader.component';
 
 const routes: Routes = [
     {
@@ -10,7 +11,8 @@ const routes: Routes = [
         component: HomeComponent
     },
     {path: "camera", component: CameraComponent},
-    {path: "images", component: PreviewComponent}
+    {path: "images", component: PreviewComponent},
+    {path: "cardreader", component: CardReaderComponent}
 ];
 
 @NgModule({
