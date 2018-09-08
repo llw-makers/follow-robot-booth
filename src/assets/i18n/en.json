@@ -34,6 +34,12 @@
         "buttons": {
           "back": "Back"
         }
+      },
+      "upload": {
+        "title": "Working...",
+        "buttons": {
+          "cancel": "Cancel"
+        }
       }
   }
 }

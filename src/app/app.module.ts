@@ -33,6 +33,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CameraComponent } from './components/camera/camera.component';
 import { PreviewComponent } from './components/preview/preview.component';
 import { CardReaderComponent } from './components/card-reader/card-reader.component';
+import { UploadComponent } from './components/upload/upload.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -46,7 +47,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     WebviewDirective,
     CameraComponent,
     PreviewComponent,
-    CardReaderComponent
+    CardReaderComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,

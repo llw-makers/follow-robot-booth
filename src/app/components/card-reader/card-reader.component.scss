@@ -1,0 +1,29 @@
+$frb-nfc-color: #1698eb;
+
+.frb-nfc-icon-container {
+  position: relative;
+}
+
+.frb-nfc-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12em;
+  color: $frb-nfc-color;
+  animation: frb-nfc-pulse 2s ease-in-out 0s infinite;
+}
+
+@keyframes frb-nfc-pulse {
+  0% {
+    color: $frb-nfc-color;
+  }
+
+  50% {
+    color: darken($frb-nfc-color, 10%);
+  }
+
+  100% {
+    color: $frb-nfc-color;
+  }
+}

@@ -1,0 +1,11 @@
+<div class="container p-5 h-100 d-flex flex-column align-items-center">
+  <h1 class="text-center display-2" translate="pages.upload.title"></h1>
+  <div class="flex-grow-1 frb-icon-spinner-container">
+    <fa-icon [icon]="['fas', 'circle-notch']" class="frb-icon-spinner" [spin]="true"></fa-icon>
+  </div>
+  <div>
+    <a class="btn btn-secondary btn-lg mr-2" routerLink="/cardreader">
+      <fa-icon [icon]="['fas', 'times']" class="mr-2"></fa-icon> <span translate="pages.upload.buttons.cancel"></span>
+    </a>
+  </div>
+</div>

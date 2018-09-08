@@ -1,8 +1,8 @@
-<div class="container p-5 d-flex flex-column align-items-center">
+<div class="container p-5 h-100 d-flex flex-column align-items-center">
   <h1 class="text-center display-2" translate="pages.cardreader.title"></h1>
-  <p translate="pages.cardreader.description"></p>
-  <div class="flex-grow-1">
-
+  <p translate="pages.cardreader.description" class="m-0"></p>
+  <div class="flex-grow-1 frb-nfc-icon-container">
+    <fa-icon [icon]="['fas', 'wifi']" class="frb-nfc-icon"></fa-icon>
   </div>
   <div>
     <a class="btn btn-secondary btn-lg mr-2" routerLink="/images">
